@@ -17,6 +17,8 @@ public final class com/chuckerteam/chucker/api/ChuckerCollector {
 	public synthetic fun <init> (Landroid/content/Context;ZLcom/chuckerteam/chucker/api/RetentionManager$Period;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 	public final fun getShowNotification ()Z
 	public final fun setShowNotification (Z)V
+	public final fun writeTransactions (Landroid/content/Context;Ljava/lang/Long;Lcom/chuckerteam/chucker/api/ExportFormat;)Landroid/net/Uri;
+	public static synthetic fun writeTransactions$default (Lcom/chuckerteam/chucker/api/ChuckerCollector;Landroid/content/Context;Ljava/lang/Long;Lcom/chuckerteam/chucker/api/ExportFormat;ILjava/lang/Object;)Landroid/net/Uri;
 }
 
 public final class com/chuckerteam/chucker/api/ChuckerInterceptor : okhttp3/Interceptor {
@@ -36,6 +38,19 @@ public final class com/chuckerteam/chucker/api/ChuckerInterceptor$Builder {
 	public final fun maxContentLength (J)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
 	public final fun redactHeaders (Ljava/lang/Iterable;)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
 	public final fun redactHeaders ([Ljava/lang/String;)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
+	public final fun skipDomains (Lkotlin/text/Regex;)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
+	public final fun skipDomains ([Ljava/lang/String;)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
+	public final fun skipPaths (Lkotlin/text/Regex;)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
+	public final fun skipPaths ([Ljava/lang/String;)Lcom/chuckerteam/chucker/api/ChuckerInterceptor$Builder;
+}
+
+public final class com/chuckerteam/chucker/api/ExportFormat : java/lang/Enum {
+	public static final field HAR Lcom/chuckerteam/chucker/api/ExportFormat;
+	public static final field LOG Lcom/chuckerteam/chucker/api/ExportFormat;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
+	public final fun getExtension ()Ljava/lang/String;
+	public static fun valueOf (Ljava/lang/String;)Lcom/chuckerteam/chucker/api/ExportFormat;
+	public static fun values ()[Lcom/chuckerteam/chucker/api/ExportFormat;
 }
 
 public final class com/chuckerteam/chucker/api/RetentionManager {
@@ -50,6 +65,7 @@ public final class com/chuckerteam/chucker/api/RetentionManager$Period : java/la
 	public static final field ONE_DAY Lcom/chuckerteam/chucker/api/RetentionManager$Period;
 	public static final field ONE_HOUR Lcom/chuckerteam/chucker/api/RetentionManager$Period;
 	public static final field ONE_WEEK Lcom/chuckerteam/chucker/api/RetentionManager$Period;
+	public static fun getEntries ()Lkotlin/enums/EnumEntries;
 	public static fun valueOf (Ljava/lang/String;)Lcom/chuckerteam/chucker/api/RetentionManager$Period;
 	public static fun values ()[Lcom/chuckerteam/chucker/api/RetentionManager$Period;
 }
